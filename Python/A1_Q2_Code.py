@@ -21,7 +21,7 @@ for i in range(R):
     M.append(a)
 
 res = dict(sum(map(Counter, M), Counter()))
-print(res)
+
 print("The most frequent value in the matrix is: " + str(max(res, key=res.get)))    
 
 
