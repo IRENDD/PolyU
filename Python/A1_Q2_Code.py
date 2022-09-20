@@ -19,6 +19,7 @@ for i in range(R):
             else:
                 a.append(num)
                 break
+    # Adding the list to a matrix
     M.append(a)
     #print(a)
 
@@ -34,4 +35,6 @@ for lis in M:
             freq[item] = 1 
 
 #print(freq)
-print("The most frequent value in the matrix is: " + str(max(freq, key=freq.get)))  
+print("The most frequent value in the matrix is: " + str(max(freq, key=freq.get)))    
+
+
