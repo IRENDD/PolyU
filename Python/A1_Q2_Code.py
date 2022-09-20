@@ -1,12 +1,13 @@
-from typing import Counter
-
 R = int(input("Enter the number of rows: "))
 C = int(input("Enter the number of columns: "))
+
 M = []
+freq = {}
 
 for i in range(R):
     a = []
     for j in range(C):
+        # Restricting user input in the given range from 0 to 255
         while True:
             try:
                 num = int(input())
@@ -19,9 +20,18 @@ for i in range(R):
                 a.append(num)
                 break
     M.append(a)
-
-res = dict(sum(map(Counter, M), Counter()))
-
-print("The most frequent value in the matrix is: " + str(max(res, key=res.get)))    
+    #print(a)
 
 
+# Counting frequencies in the matrix using a dictionary 
+# Extracting lists from the matrix
+for lis in M:
+    # Extracting numbers from the list 
+    for item in lis:
+        if(item in freq):
+            freq[item] += 1
+        else:
+            freq[item] = 1 
+
+#print(freq)
+print("The most frequent value in the matrix is: " + str(max(freq, key=freq.get)))  
