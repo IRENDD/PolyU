@@ -1,4 +1,4 @@
-# Made By Ilyas Akramov. 2296786D
+# Made By Ilyas Akramov. 22096786D
 R = int(input("Enter the number of rows: "))
 C = int(input("Enter the number of columns: "))
 
