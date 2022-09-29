@@ -1,9 +1,11 @@
-# Made By Ilyas Akramov. 22096786D
 R = int(input("Enter the number of rows: "))
 C = int(input("Enter the number of columns: "))
 
 M = []
-freq = {}
+freq = []
+
+largest_num = 0
+isTrue = False
 
 for i in range(R):
     a = []
@@ -24,18 +26,26 @@ for i in range(R):
     M.append(a)
     #print(a)
 
+# Creating an array that will count the frequency of the numbers
+for i in range(0, 256):
+    freq.append(0)
 
-# Counting frequencies in the matrix using a dictionary 
-# Extracting lists from the matrix
-for lis in M:
-    # Extracting numbers from the list 
-    for item in lis:
-        if(item in freq):
-            freq[item] += 1
-        else:
-            freq[item] = 1 
+# Counting frequencies in the matrix
+for i in range(R):
+    for j in range(C):
+        freq[M[i][j]] += 1
 
-#print(freq)
-print("The most frequent value in the matrix is: " + str(max(freq, key=freq.get)))    
+# Finding the maaximum value
+for i in range(0, 256):
+    if freq[i] > largest_num:
+        largest_num = freq[i]
 
-
+# Finding the maximum value in the matrix and printing
+for i in range(R):
+    for j in range(C):
+        if freq[M[i][j]] == largest_num:
+            largest_num = M[i][j]
+            isTrue = True
+    if isTrue:
+        print("The most frequent value in the matrix is: " + str(largest_num))
+        break
