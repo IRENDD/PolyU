@@ -1,3 +1,4 @@
+# Equalize binary numbers 
 def binEqualize(binA, binB):
     n = len(binA)
     m = len(binB)
