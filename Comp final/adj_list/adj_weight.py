@@ -38,8 +38,8 @@ def adjWeight_matrixList(AdjencyMatrix):
     
     return final
 
-#AdjencyList = eval(input("Enter adjusted list: "))
-#print(adjWeight_listMatrix(AdjencyList))
+AdjencyList = eval(input("Enter adjusted list: "))
+print(adjWeight_listMatrix(AdjencyList))
 
 AdjencyMatrix = eval(input("Enter adjusted list: "))
 print(adjWeight_matrixList(AdjencyMatrix))
