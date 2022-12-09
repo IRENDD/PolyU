@@ -1,3 +1,4 @@
+# Adjusted List to Adjusted Matrix
 def adjListMatrix(AdjustListA):
     final = []
     mx = -9999999
@@ -23,6 +24,22 @@ def adjListMatrix(AdjustListA):
     
     return final
 
-AdjustListA = eval(input("Enter adjusted matrix: "))
+# Adjusted Matrix to Adjusted List
+def adjMatrixList(MatrixAdjustA):
+    final = []
+    
+    for element in MatrixAdjustA:
+        temp = []
+        for edge in range(len(element)):
+            if element[edge] == 1:
+                temp.append(chr(edge + 65))
+        final.append(temp)
+    
+    return final
+        
+
+AdjustListA = eval(input("Enter adjusted list: "))
+MatrixAdjustA = eval(input("Enter adjusted matrix: "))
 
 print(adjListMatrix(AdjustListA))
+print(adjMatrixList(MatrixAdjustA))
